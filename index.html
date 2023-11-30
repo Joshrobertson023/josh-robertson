@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;700&family=Ubuntu:wght@300;400;500;700&display=swap" rel="stylesheet">
+   <link rel="stylesheet" href="style.css">
+   <script src="main.js" defer></script>
+   <title>Josh Robertson</title>
+</head>
+<body>
+   <div class="container">
+      <div id="hero">
+         <nav>
+            <div class="left">
+               <a href="">
+                  <img src="images/JR.png" alt="logo">
+               </a>
+            </div>
+            <div class="right">
+               <a class="active-link" href="">Home</a>
+               <!-- <a class="unactive" href="blog.html">All Projects</a> -->
+               <a class="unactive" href="">Contact Me</a>
+            </div>
+         </nav>
+         <div id="hero-content">
+            <h2>JOSH</h1>
+            <h1>ROBERTSON</h1>
+            <p>Software Developer</p>
+            <div id="hero-btns">
+               <div id="left-hero-btns">
+                  <a id="btnProjects" class="button btnPrimary hero" >View Projects</a>
+                  <div class="btnBackground" ></div>
+               </div>
+               <div id="right-hero-btns">
+                  <a class="button btnSecondary hero" href="https://docs.google.com/document/d/1liFFI8PsLAUsLQIAsi1aToc2eNDeBZw28fg7diHvYW8/edit?usp=sharing" target="_blank">Resume</a>
+                  <div class="btnBackground" ></div>
+               </div>
+            </div>
+            <div class="social">
+               <a href="https://github.com/Joshrobertson023" target="_blank">
+                  <img src="images/GitHub.png" alt="github logo">
+               </a>
+               <a href="https://www.linkedin.com/in/josh-robertson-b60625264/" target="_blank">
+                  <img src="images/LinkedIn.png" alt="linkedin logo">
+               </a>
+            </div>
+         </div>
+      </div>
+   </div>
+   <div class="scrollbar-container">
+      <div id="scrollbar">
+         <p>HTML & CSS</p>
+         <p>JavaScript</p>
+         <p>C</p>
+         <p>C++</p>
+         <p>Java</p>
+         <p>Computer Security</p>
+         <p>Web Design</p>
+         <p>Web Development</p>
+         <!-- <p>React</p> -->
+         <!-- <p>Tailwind</p> -->
+      </div>
+   </div>
+   <div class="technologies-container">
+      <h3>SKILLS</h3>
+   </div>
+   <div id="projectsScroll" class="container projects">
+
+      <div class="heading" >Projects</div>
+      <hr />
+      <div class="project-sections">
+         <a class="active-link">Recents</a>
+         <a class="unactive">C</a>
+         <a class="unactive">Web Apps</a>
+         <a class="unactive">Websites</a>
+      </div>
+
+      <p>Search for a project</p>
+      <input id="input" class="projects-search" type="text" placeholder="Calculator" oninput="search();">
+      
+
+   </div>
+</body>
+</html>
