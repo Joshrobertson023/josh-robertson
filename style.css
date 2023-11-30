@@ -61,6 +61,7 @@ body {
    display: flex;
    flex-direction: column;
    align-items: center;
+   padding-bottom: 100px;
 }
 
 a {
@@ -157,7 +158,7 @@ nav .right a {
    border-bottom: 3px solid var(--primary-green);
 }
 
-.unactive:hover {
+.project-sections a:hover {
    border-bottom: 3px solid var(--primary-green);
 }
 
