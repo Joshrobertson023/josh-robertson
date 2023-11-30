@@ -2,108 +2,140 @@ import { list } from "postcss";
 import { listings } from "./listings";
 
 const content_container = document.getElementById('projectsScroll');
+const RECENTS_LENGTH = 3;
 
-function render() {
+function renderPageLoad() {
+   const recentsBtn = document.getElementById('recents'),
+         cBtn = document.getElementById('c'),
+         webappsBtn = document.getElementById('web-apps'),
+         websitesBtn = document.getElementById('websites');
 
-   for(let i = 0; i < 5; i++)
-   renderCardInverse(listings[i].displayTitle, 
-                     listings[i].learningOutcomes, 
-                     listings[i].built,
-                     listings[i].liveLink,
-                     listings[i].gitLink,
-                     listings[i].image);
-   // for(let i = 0; i < 2; i++) {
-   //    // let inverse = listings[i].inverse;
-   //    // if(inverse)
-   //    //    renderCardInverse(listings[i].displayTitle, listings[i].learningOutcomes);
-   //    // else
-   //    //    renderCardOriginal(listings[i].displayTitle, listings[i].learningOutcomes);
+   renderRecents();
 
-   //    // If over 4, add hiden class
-   // }
+   recentsBtn.addEventListener('click', function(e) {
+      e.preventDefault();
+      setActive(recentsBtn);
+      renderRecents();
+   });
 
-   // --- Card ---
-   function renderCardInverse(title, learningOutcomes, builtWith, liveLink, gitLink, imgSrc) {
+   cBtn.addEventListener('click', function(e) {
+      e.preventDefault();
+      setActive(cBtn);
+      renderCategory('c');
+   });
 
-      const projectCard1 = document.createElement('div');
-      projectCard1.classList.add('project-card');
-      content_container.appendChild(projectCard1);
-   
-      // Text
-      const textDiv1 = document.createElement('div');
-      textDiv1.classList.add('text', 'inverse');
-      content_container.appendChild(textDiv1);
-   
-      const headingCard1 = document.createElement('div');
-      headingCard1.classList.add('card-heading');
-      headingCard1.textContent = title;
-      textDiv1.appendChild(headingCard1);
-   
-      const learningText = document.createElement('p');
-      learningText.textContent = 'Learning Outcomes';
-      textDiv1.appendChild(learningText);
-   
-      const hrTop = document.createElement('hr');
-      textDiv1.appendChild(hrTop);
-   
-      const learningOutcomesDiv = document.createElement('p');
-      learningOutcomesDiv.textContent = learningOutcomes;
-      textDiv1.appendChild(learningOutcomesDiv);
+   webappsBtn.addEventListener('click', function(e) {
+      e.preventDefault();
+      setActive(webappsBtn);
+      renderCategory('web-apps');
+   });
 
-      const hrBottom = document.createElement('hr');
-      textDiv1.appendChild(hrBottom);
+   websitesBtn.addEventListener('click', function(e) {
+      e.preventDefault();
+      setActive(websitesBtn);
+      renderCategory('websites');
+   })
 
-      const builtWithDiv = document.createElement('p');
-      builtWithDiv.textContent = builtWith;
-      textDiv1.appendChild(builtWithDiv);
-
-      const buttonsDiv = document.createElement('div');
-      buttonsDiv.classList.add('card-buttons');
-      if(liveLink !== '') {
-         const liveSiteLink = document.createElement('a');
-         liveSiteLink.href = liveLink;
-         liveSiteLink.textContent = 'Live Site ->';
-         buttonsDiv.appendChild(liveSiteLink);
+   function setActive(activeLink) {
+      const links = document.querySelectorAll('.link');
+      for(const link of links)
+         link.className = 'link';
+      activeLink.classList.add('active-link');
       }
-      const gitLinkA = document.createElement('a');
-      gitLinkA.href = gitLink;
-      gitLinkA.textContent = 'Github Repo ->';
-      buttonsDiv.appendChild(gitLinkA);
 
-      // Image
-      const imageDiv = document.createElement('div');
-      imageDiv.classList.add('image');
-      const img = document.createElement('img');
-      img.src = imgSrc;
-      img.width = '600px';
-      img.height = '350px';
-      imageDiv.appendChild(img);
+   function renderRecents() {
+      const cards = document.querySelectorAll('.project-card');
+      for(const card of cards)
+         card.remove();
+   
+      for(let i = 0; i < RECENTS_LENGTH; i++)
+         renderCardInverse(listings[i].displayTitle, 
+                           listings[i].learningOutcomes, 
+                           listings[i].builtWith,
+                           listings[i].liveLink,
+                           listings[i].gitLink,
+                           listings[i].imageSrc);
    }
 
-   // function renderCardOriginal(title, learningOutcomes) {
-   //    const projectCard1 = document.createElement('div');
-   //    projectCard1.classList.add('project-card');
-   //    content_container.appendChild(projectCard1);
+   function renderCategory(category) {
+      const cards = document.querySelectorAll('.project-card');
+      for(const card of cards)
+         card.remove();
+
+      for (let i = 0; i < listings.length; i++) {
+         if (listings[i].category === category) {
+            renderCardInverse(listings[i].displayTitle, 
+               listings[i].learningOutcomes, 
+               listings[i].builtWith,
+               listings[i].liveLink,
+               listings[i].gitLink,
+               listings[i].imageSrc);
+         }
+      }
+   }
    
-   //    const textDiv1 = document.createElement('div');
-   //    textDiv1.classList.add('text', 'original');
+   // --- Render inverse card ---
+   function renderCardInverse(title, learningOutcomes, builtWith, liveLink, gitLink, imgSrc) {
    
-   //    const headingCard1 = document.createElement('div');
-   //    headingCard1.classList.add('card-heading');
-   //    headingCard1.textContent = title;
-   //    textDiv1.appendChild(headingCard1);
+   const card_container = document.createElement('div');
+   card_container.classList.add('project-card');
+   content_container.appendChild(card_container);
    
-   //    const learningText = document.createElement('p');
-   //    learningText.textContent = 'Learning Outcomes';
-   //    textDiv1.appendChild(learningText);
+   // Text
+   const textDiv1 = document.createElement('div');
+   textDiv1.classList.add('text', 'inverse');
+   card_container.appendChild(textDiv1);
    
-   //    const hrRight = document.createElement('hr');
-   //    textDiv1.appendChild(hrRight);
+   const headingCard1 = document.createElement('div');
+   headingCard1.classList.add('card-heading');
+   headingCard1.textContent = title;
+   textDiv1.appendChild(headingCard1);
    
-   //    const learningOutcomesDiv = document.createElement('div');
-   //    learningOutcomesDiv.textContent = learningOutcomes;
-   //    textDiv1.appendChild(learningOutcomesDiv);
-   // }
+   const learningText = document.createElement('p');
+   learningText.textContent = 'Learning Outcomes';
+   textDiv1.appendChild(learningText);
+   
+   const hrTop = document.createElement('hr');
+   textDiv1.appendChild(hrTop);
+   
+   const learningOutcomesDiv = document.createElement('p');
+   learningOutcomesDiv.textContent = learningOutcomes;
+   textDiv1.appendChild(learningOutcomesDiv);
+   
+   const hrBottom = document.createElement('hr');
+   textDiv1.appendChild(hrBottom);
+   
+   const builtWithDiv = document.createElement('p');
+   builtWithDiv.textContent = builtWith;
+   textDiv1.appendChild(builtWithDiv);
+   
+   const buttonsDiv = document.createElement('div');
+   buttonsDiv.classList.add('card-buttons');
+   textDiv1.appendChild(buttonsDiv);
+   
+   if(liveLink !== '') {
+      const liveSiteLink = document.createElement('a');
+      liveSiteLink.href = liveLink;
+      liveSiteLink.target = '_blank';
+      liveSiteLink.textContent = 'Live Site ->';
+      buttonsDiv.appendChild(liveSiteLink);
+   }
+   const gitLinkA = document.createElement('a');
+   gitLinkA.href = gitLink;
+   gitLinkA.target = '_blank';
+   gitLinkA.textContent = 'Github Repo ->';
+   buttonsDiv.appendChild(gitLinkA);
+   
+   // Image
+   const imageDiv = document.createElement('div');
+   imageDiv.classList.add('image');
+   card_container.appendChild(imageDiv);
+   const img = new Image();
+   img.src = imgSrc;
+   img.width = '600';
+   img.height = '350';
+   imageDiv.appendChild(img);
+   }
 }
 
-export {render};
+export { renderPageLoad };

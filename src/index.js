@@ -1,9 +1,9 @@
 import { scrollController  } from "./interactivity";
-import { render  } from "./pageload";
+import { renderPageLoad  } from "./pageload";
 import { listings } from "./listings";
 
 scrollController();
-render();
+renderPageLoad();
 
 function search() {
    const projectCards = document.querySelectorAll('.project-card');
