@@ -1,5 +1,38 @@
 const listings = [
    {
+      title: 'calculate a square to circle area ratio',
+      displayTitle: 'Calculate a Square-to-circle Area Ratio',
+      learningOutcomes: '...',
+      builtWith: 'Built with C.',
+      liveLink: '',
+      gitLink: 'https://github.com/Joshrobertson023/cs-246/blob/main/program5.cpp',
+      imageSrc: './images/Square-to-circle.jpg',
+      inverse: false,
+      category: 'c',
+   },
+   {
+      title: 'manage straight sided geometric shapes',
+      displayTitle: 'Manage Straight-Sided Geometric Shapes',
+      learningOutcomes: 'This program brought all my C++ knowledge to use in one program. Classes, virtual functions, dynamic memory, and more.',
+      builtWith: 'Built with C.',
+      liveLink: '',
+      gitLink: 'https://www.dropbox.com/scl/fi/kq46gyl14mk03mupukz22/program4.cpp?rlkey=903flcmibzb9164tbc8rrndoi&dl=0',
+      imageSrc: './images/program4.jpg',
+      inverse: false,
+      category: 'c',
+   },
+   {
+      title: 'managing student records',
+      displayTitle: 'Managing Student Records',
+      learningOutcomes: 'This was the final project in my Data Structures and Algorithms class. The student records were implemented using a linear linked list. This project taught me how to create a basic linked list application.',
+      builtWith: 'Built with C.',
+      liveLink: '',
+      gitLink: 'https://github.com/Joshrobertson023/Data-Structures-Algorithms/blob/main/program-code/program6.c',
+      imageSrc: './images/searching-algorithms.jpg',
+      inverse: false,
+      category: 'c',
+   },
+   {
       title: 'new life cancer support group',
       displayTitle: 'New Life Cancer Support Group',
       learningOutcomes: 'This is the first website I made for a real client. I set up the workflow for the client to manage everything in the background. This is also the first time using Tailwind CSS.',
@@ -7,8 +40,8 @@ const listings = [
       liveLink: 'https://nlcsupportgroup.com/index.html',
       gitLink: 'https://github.com/Joshrobertson023/newlifecancer',
       imageSrc: './images/newlifecancer.jpg',
-      inverse: true,
-      category: 'websites',
+      inverse: false,
+      category: 'webapps',
    },
    {
       title: 'calculator',
@@ -19,7 +52,7 @@ const listings = [
       gitLink: 'https://github.com/Joshrobertson023/calculator',
       imageSrc: './images/Calculator.jpg',
       inverse: false,
-      category: 'web-apps',
+      category: 'webapps',
    },
    {
       title: 'searching algorithms',
@@ -29,7 +62,7 @@ const listings = [
       liveLink: '',
       gitLink: 'https://github.com/Joshrobertson023/Data-Structures-Algorithms/blob/main/program7.c',
       imageSrc: './images/searching-algorithms.jpg',
-      inverse: true,
+      inverse: false,
       category: 'c',
    },
    {
@@ -41,7 +74,7 @@ const listings = [
       gitLink: 'https://github.com/Joshrobertson023/tic-tac-toe',
       imageSrc: './images/tictactoe.jpg',
       inverse: false,
-      category: 'web-apps',
+      category: 'webapps',
    },
    {
       title: 'etch a sketch',
@@ -51,8 +84,8 @@ const listings = [
       liveLink: 'https://joshrobertson023.github.io/etch-a-sketch/',
       gitLink: 'https://github.com/Joshrobertson023/etch-a-sketch',
       imageSrc: './images/etchasketch.jpg',
-      inverse: true,
-      category: 'web-apps',
+      inverse: false,
+      category: 'webapps',
    }
 ]
 
