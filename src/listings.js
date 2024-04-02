@@ -8,7 +8,7 @@ const listings = [
       gitLink: 'https://github.com/Joshrobertson023/cs-246/blob/main/program5.cpp',
       imageSrc: './images/Square-to-circle.jpg',
       inverse: false,
-      category: 'c',
+      category: 'cpp',
    },
    {
       title: 'manage straight sided geometric shapes',
@@ -19,7 +19,7 @@ const listings = [
       gitLink: 'https://www.dropbox.com/scl/fi/kq46gyl14mk03mupukz22/program4.cpp?rlkey=903flcmibzb9164tbc8rrndoi&dl=0',
       imageSrc: './images/program4.jpg',
       inverse: false,
-      category: 'c',
+      category: 'cpp',
    },
    {
       title: 'managing student records',
