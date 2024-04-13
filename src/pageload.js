@@ -8,8 +8,8 @@ const RECENTS_LENGTH = 3;
 function renderPageLoad() {
    const recentsBtn = document.getElementById('recents'),
          cBtn = document.getElementById('c'),
-         webappsBtn = document.getElementById('web-apps'),
-         websitesBtn = document.getElementById('websites'),
+         cppBtn = document.getElementById('cpp'),
+         webappsBtn = document.getElementById('webapps'),
          searchBtn = document.getElementById('search');
 
    renderRecents();
@@ -29,13 +29,13 @@ function renderPageLoad() {
    webappsBtn.addEventListener('click', function(e) {
       e.preventDefault();
       setActive(webappsBtn);
-      renderCategory('web-apps');
+      renderCategory('webapps');
    });
 
-   websitesBtn.addEventListener('click', function(e) {
+   cppBtn.addEventListener('click', function(e) {
       e.preventDefault();
-      setActive(websitesBtn);
-      renderCategory('websites');
+      setActive(cppBtn);
+      renderCategory('cpp');
       console.log('rendering websites');
    })
 
@@ -71,12 +71,12 @@ function renderPageLoad() {
    
       for(let i = 0; i < listings.length; i++)
          renderCardOriginal(listings[i].displayTitle, 
-                           listings[i].learningOutcomes, 
-                           listings[i].builtWith,
-                           listings[i].liveLink,
-                           listings[i].gitLink,
-                           listings[i].imageSrc,
-                           listings[i].title);
+                            listings[i].learningOutcomes, 
+                            listings[i].builtWith,
+                            listings[i].liveLink,
+                            listings[i].gitLink,
+                            listings[i].imageSrc,
+                            listings[i].title);
    }
 
    function setActive(activeLink) {
